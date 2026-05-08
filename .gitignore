@@ -1,1 +1,3 @@
 *_study
+__pycache__/
+*.pyc
