@@ -1,6 +1,6 @@
 CFLAGS := -O3
 
-TARGETS := to_MiB_s replay
+TARGETS := to_MiB_s replay aging_system
 
 all: ${TARGETS}
 
@@ -15,6 +15,9 @@ helper/map.o: helper/map.c helper/map.h
 
 replay: helper/replay.c helper/mt19937ar.o helper/lcg.o helper/map.o 
 	gcc $^ -O3 -g -o $@ -lpthread
+
+aging_system: helper/aging_system.c helper/mt19937ar.o
+	gcc $^ -O3 -o $@
 
 	
 %: helper/%.c
