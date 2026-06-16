@@ -373,17 +373,19 @@ void *replay_worker(void *arg)
         }
     }
 
+    int open_flags = O_RDWR | O_SYNC;
+
     if (access(dstpath, F_OK) == 0) {
         if (mode == REPLAY_APPEND) {
-            dst_fd = open(dstpath, O_RDWR | O_APPEND);
+            dst_fd = open(dstpath, open_flags | O_APPEND);
         } else {
-            dst_fd = open(dstpath, O_RDWR);
+            dst_fd = open(dstpath, open_flags);
         }
     } else {
         if (mode == REPLAY_APPEND) {
-            dst_fd = open(dstpath, O_RDWR | O_CREAT | O_TRUNC | O_APPEND, 0644);
+            dst_fd = open(dstpath, open_flags | O_CREAT | O_TRUNC | O_APPEND, 0644);
         } else {
-            dst_fd = open(dstpath, O_RDWR | O_CREAT | O_TRUNC, 0644);
+            dst_fd = open(dstpath, open_flags | O_CREAT | O_TRUNC, 0644);
         }
         posix_fadvise64(dst_fd, 0, 0, POSIX_FADV_RANDOM);
     }
