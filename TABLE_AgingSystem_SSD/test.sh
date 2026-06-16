@@ -11,9 +11,9 @@ mkdir -p "$ABS_PATH"/M_DATA
 FILE_SIZE=(16)
 BSS=(4096 $((2 * 1024 * 1024)))
 
-FS_LABELS=( "F2FS" "HFDedup" "SmartDedup" "FDM" "Light-Dedup" )
-FS_DIRS=( "f2fs" "HFDedup2" "smartdedup" "GogetaFS" "GogetaFS" )
-BRANCHES=( "main" "hfdedup" "smartdedup" "main" "lightdedup" )
+FS_LABELS=( "F2FS" "Gogeta" "Light-Dedup" )
+FS_DIRS=( "f2fs" "GogetaFS" "GogetaFS" )
+BRANCHES=( "main" "main" "lightdedup" )
 
 TABLE_NAME="$ABS_PATH/newly_table"
 table_create "$TABLE_NAME" "file_system file_size block_size read write time"

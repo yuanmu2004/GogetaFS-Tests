@@ -8,10 +8,10 @@ DUP_RATES=( 0 25 50 75 )
 FILE_SIZE=( $((1 * 1024)) ) # 4 * 1024
 NUM_JOBS=( 1 )
 
-FILE_SYSTEMS=( "f2fs" "GogetaFS" "GogetaFS" "GogetaFS" "GogetaFS" )
-TIMERS=( "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" )
-SETUPS=( "setup_f2fs.sh" "setup_f2fs.sh" "setup_f2fs.sh" "setup_f2fs.sh" "setup_f2fs.sh" )
-BRANCHES=( "main" "hfdedup" "smartdedup" "main" "lightdedup" )
+FILE_SYSTEMS=( "f2fs" "GogetaFS" "GogetaFS" )
+TIMERS=( "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" "fio_f2fs_no_sync.sh" )
+SETUPS=( "setup_f2fs.sh" "setup_f2fs.sh" "setup_f2fs.sh" )
+BRANCHES=( "main" "main" "lightdedup" )
 
 TABLE_NAME="$ABS_PATH/performance-comparison-table-no-sync"
 table_create "$TABLE_NAME" "file_system dup_rate num_job bandwidth(MiB/s)"

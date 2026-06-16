@@ -9,23 +9,14 @@ ABS_PATH=$(where_is_script "$0")
 mkdir -p "$ABS_PATH"/M_DATA
 
 FS_LABELS=(
-    "F2FS"
-    "HFDedup-NORMAL" "HFDedup-FAILURE"
-    "SmartDedup-NORMAL" "SmartDedup-FAILURE"
-    "FDM-NORMAL" "FDM-FAILURE"
+    "Gogeta-NORMAL" "Gogeta-FAILURE"
     "Light-Dedup-NORMAL" "Light-Dedup-FAILURE"
 )
 FS_DIRS=(
-    "f2fs"
-    "GogetaFS" "GogetaFS"
-    "GogetaFS" "GogetaFS"
     "GogetaFS" "GogetaFS"
     "GogetaFS" "GogetaFS"
 )
 BRANCHES=(
-    "main"
-    "hfdedup" "hfdedup-failure"
-    "smartdedup" "smartdedup-failure"
     "main" "main-failure"
     "lightdedup" "lightdedup-failure"
 )
